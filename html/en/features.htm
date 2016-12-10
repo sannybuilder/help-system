@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Features</title>
+<link rel="stylesheet" type="text/css" href="style/style2.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body>
+
+<h2>Features</h2>
+<p>Sanny Builder grants the end-user the following possibilities:</p>
+
+<h3>Syntax Highlighting</h3>
+<p>Sanny Builder highlights a code for easier understanding. The highlighting color scheme is <a href="O_104.htm">changeable via the options.</a></p>
+
+<h3>Bookmarks / Quick jump</h3>
+<p>You can bookmark the line by pressing <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">0..9</span> and then to pass to this one by pressing <span class="kbd">Ctrl</span>+<span class="kbd">0..9</span>. To delete all bookmarks, use option Edit -&gt; Clear All Bookmarks. The second method is via an option 'Go To Line' invoked by pressing <span class="kbd">Ctrl</span>+<span class="kbd">G</span>. Enter a sequence number of the necessary line and the editor will move the cursor to it.</p>
+
+<h3><a name="jumpLabel" id="jumpLabel"></a>InstaSearch</h3>
+<p>The InstaSearch feature allows to find a word or a label directly in the editor without using the Find dialog box.</p>
+<p>To find another occurrence of a word under the cursor, press <span class="kbd">Ctrl</span> + <span class="kbd">Num6</span> to start searching it below in a code, or <span class="kbd">Ctrl</span> + <span class="kbd">Num4</span> to search above. The cursor will immediately move to the line where such word is found. Keep pressing <span class="kbd">Ctrl</span> + <span class="kbd">Num4</span>/<span class="kbd">Num6</span> to find other occurrences of this word.</p>
+
+<p>To jump to the line with a label (for example, :MyLabel), put the cursor on a label reference (@MyLabel) and press <span class="kbd">Ctrl</span> + <span class="kbd">Num2</span>. The editor will move the cursor to the line with this label.</p>
+
+<p>If the cursor position remains the same, it means that the InstaSearch did not find the needed word in a code.</p>
+
+<p>Before changing the cursor position the InstaSearch remembers where it is now, so if you want to return back press <span class="kbd">Ctrl</span> + <span class="kbd">Num8</span>.</p>
+
+<h3>Displaying Various Information About Opcode</h3>
+
+<p>SB displays a number of parameters for the opcode, a digital value of the model under the cursor in the statusbar when the option <a href="O_103.htm#IDE">Show opcode info</a> is enabled.</p>
+
+<h3>SA Mission Builder Source Code Converter</h3>
+<p>Sanny supports SAMB 0.33 syntax. To use the converter, open the source file in Sanny Builder and select menu  item: 'Tools -&gt; Code converter -&gt; MB -&gt; SB'.  Note the convertor uses the file 'MB.ini' from  the SB directory which contains the variables used by SAMB and their memory addresses. If you added your own variables in the file variables.ini (from the SAMB 0.33), copy them into the file MB.ini.</p>
+
+<h3>Opcode Search</h3>
+<p>Use a built-in <a href="opcode_search.htm">Opcode Search tool</a> to find an opcode you need.</p>
+
+<h3><a name="Player coords managing"></a>Player Coordinates Management</h3>
+<p>Press F4 when SA is running and the  Coords Manager window will appear. Here, you can set new player coords and copy the  current ones. In the upper edit line, you can input  all three coordinates XYZ, delimited by a single space or &quot;,&quot;. Additionally,  you can insert CJ's  current coords in the text by pressing <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">C</span>. To insert the player's angle, press <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">E</span>.</p>
+
+<h3><a name="use macros"></a>Macros Support</h3>
+<p>A macro is the group of lines that are inserted in the editor when you type a macro name (for example, <span class="i">load</span>) and press the <span class="kbd">F2</span> button. The editor will add the following piece of the code:</p>
+
+<pre><span class="model">#</span>.<span class="command">Load</span>
+
+<span class="reservedword">while not</span> <span class="model">#</span>.<span class="command">Available</span><br>
+  <span class="reservedword">wait</span> <span class="number">0</span><br>
+<span class="reservedword">end</span></pre>
+
+<p class="note"> All macros are contained in the file 'macroes.txt'. Syntax of this file is that:<br><span class="i">A macro name</span> is written as a single line. The equals sign (=) should follow the macro name. After the equals sign you can also write a short description of the macro. The macro code lines follow its name, each line begins with the equals sign. The cursor position is  marked with the | character</p>
+<p>Additionally, it's possible to add a macro in the file macroes.txt directly from the editor. For this purpose, select the a piece of the code and click the &quot;Service -&gt; Add macros&quot; menu. Type in the name of a new macro, the description (optionally) in the dialog window and press the OK buton. The macro is ready to be used.</p>
+
+<p>To call the macros list, press <span class="kbd">Ctrl</span>+<span class="kbd">J</span>.</p>
+
+<p>You can also record your key pressing sequence (macros) and reproduce it later. Consider the following code:</p>
+<pre><span class="variable">$Actor</span><span class="space"> = </span><span class="class">Actor</span><span class="symbol">.</span><span class="command">Create</span><span class="symbol">(CivMale, </span><span class="model">#MALE01</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">10.0</span><span class="symbol">)</span>
+<span class="variable">$ActorWithGun</span><span class="space"> = </span><span class="class">Actor</span><span class="symbol">.</span><span class="command">Create</span><span class="symbol">(CivMale, </span><span class="model">#MALE01</span><span class="symbol">, </span><span class="number">110.0</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">20.0</span><span class="symbol">)</span>
+<span class="variable">$Gang01</span><span class="space"> = </span><span class="class">Actor</span><span class="symbol">.</span><span class="command">Create</span><span class="symbol">(CivMale, </span><span class="model">#MALE01</span><span class="symbol">, </span><span class="number">120.0</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">30.0</span><span class="symbol">)</span>
+<span class="variable">$Gang02</span><span class="space"> = </span><span class="class">Actor</span><span class="symbol">.</span><span class="command">Create</span><span class="symbol">(CivMale, </span><span class="model">#MALE01</span><span class="symbol">, </span><span class="number">130.0</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">40.0</span><span class="symbol">)</span>
+<span class="variable">$Killer</span><span class="space"> = </span><span class="class">Actor</span><span class="symbol">.</span><span class="command">Create</span><span class="symbol">(CivMale, </span><span class="model">#MALE01</span><span class="symbol">, </span><span class="number">140.0</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">50.0</span><span class="symbol">)</span>
+<span class="variable">$ActorWithoutGun</span><span class="space"> = </span><span class="class">Actor</span><span class="symbol">.</span><span class="command">Create</span><span class="symbol">(CivMale, </span><span class="model">#MALE01</span><span class="symbol">, </span><span class="number">150.0</span><span class="symbol">, </span><span class="number">100.0</span><span class="symbol">, </span><span class="number">60.0</span><span class="symbol">) </span></pre>
+
+<p>Say you need to exchange the actor's handles in each pair (i.e have <span class="variable">$ActorWithGun</span> instead of <span class="variable">$Actor</span>, and vice versa).</p>
+
+<p>Put the cursor on the first line and press <span class="kbd">Ctrl</span>+<span class="kbd">M</span>. The editor immediately begins logging all keystrokes - so be careful!</p>
+
+<p>- Press and hold <span class="kbd">Ctrl</span> and press once [Right arrow]<br>
+- Now press <span class="kbd">Shift</span>+<span class="kbd">Home</span> and <span class="kbd">Ctrl</span>+<span class="kbd">Ins</span>.<br>
+- Press [Down arrow]. The cursor must be on the second line with the global variable  on the clipboard<br>
+- Press <span class="kbd">Ctrl</span> + [Right arrow] and <span class="kbd">Shift</span>+<span class="kbd">Ins</span>.<br>
+- Press <span class="kbd">Ctrl</span> + [Left arrow], <span class="kbd">Shift</span>+<span class="kbd">Home</span>, <span class="kbd">Ctrl</span>+<span class="kbd">Ins</span> and <span class="kbd">Delete</span><br>
+- Press [Up arrow]<br>
+- Press <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + [Right arrow] and <span class="kbd">Shift</span>+<span class="kbd">Ins</span><br>
+- Press <span class="kbd">Home</span> button.</p>
+<p>Now the first two lines look like these:</p>
+<pre><span class="variable">$ActorWithGun</span> = <span class="class">Actor</span>.<span class="command">Create</span>(CivMale, <span class="number">100.0</span>, <span class="number">100.0</span>, <span class="number">10.0</span>)
+<span class="variable">$Actor</span> = <span class="class">Actor</span>.<span class="command">Create</span>(CivMale, <span class="number">110.0</span>, <span class="number">100.0</span>, <span class="number">20.0</span>)</pre>
+<p>and cursor is in the beginning of the first line. Now press <span class="kbd">Ctrl</span>+<span class="kbd">M</span> to stop recording.</p>
+<p>Now you can repeat the recorded keystrokes by pressing <span class="kbd">Ctrl</span>+<span class="kbd">P</span>. Put the cursor on the third line, press <span class="kbd">Ctrl</span>+<span class="kbd">P</span> and the actors handles will be exchanged.</p>
+<p>While processing, you can pause/unpause the recording by pressing <span class="kbd">Ctrl</span>+<span class="kbd">P</span>.</p>
+
+<h3>Replacing  Mission Numbers With Their Names</h3>
+<p>Sanny Builder allows using a mission name in the opcode 'start_mission'. The mission name is the label defined with a DEFINE MISSION command. For example, you have:</p>
+<pre>DEFINE MISSION <span class="number">10</span> AT <span class="label">@MYMISSION</span></pre>
+<p>Instead of <span class="reservedword">start_mission</span> <span class="number">10</span> you can use <span class="reservedword">start_mission</span> MYMISSION.</p>
+<p>There is also the <a href="O_101.htm#mission">Replace Mission Numbers</a> option. When it's enabled, the decompiler automatically replaces all mission numbers with their names.</p>
+<p>To call the mission names list, press <span class="kbd">Ctrl</span>+<span class="kbd">Space</span>. The cursor has to be directly after the start_mission command.</p>
+<p>Additionally, you can use <a href="#jumpLabel">the InstaSearch</a> to jump to the mission from its name.</p>
+
+<h3><a name="mission_names"></a>Custom Mission Names</h3>
+<p>Since v3.2.0 Sanny supports custom mission names for each available <a href="edit_modes.htm">edit mode</a>. Mission names are commonly stored into a file missions.txt located in a data\&lt;game&gt; folder. This file is used by the decompiler to comment each mission entry with its title. If a main.scm file contains some custom missions you may edit this file to have proper titles after decompiling.</p>
+
+<h3><a name="The multilingual interface"></a>Multilingual Interface</h3>
+<p>Sanny Builder has fully multilingual interface translated into 15 languages. You can switch languages in the options (<span class="kbd">F10</span>). The file 'lang\How to translate.txt' contains more information about creating your own translation.</p>
+
+<h3>External Tools/Plug-ins Menu</h3>
+<p>You can add up to 9 tools which can be executed whenever you need them. Every tool has its own hotkey for your convenience. You may also pass the parameters to your tool. To pass the name of the current opened file use a special word $SB_FileName.</p>
+
+<h3><a name="CodeComments"></a>Commenting Code</h3>
+<p>Comments are denoted by a double slash //, as seen in other scripting languages (php etc.). All text placed after // (within that same line) will be ignored by the compiler.</p>
+
+<p>To comment out multiple lines or part of the line, use block comments {}:</p>
+<pre>0001: <span class="reservedword">wait</span>  <span class="comment">{comments here}</span> <span class="number">0</span> ms</pre>
+<p>Since version 3.06 Sanny Builder also supports <i>C++</i>-like comments <b>/*  */</b>.</p>
+<pre>0001: <span class="reservedword">wait</span>  <span class="comment">/* comments here */</span> <span class="number">0</span> ms</pre>
+<p>Also it is possible to comment out multiple lines by selecting them and pressing <span class="kbd">Ctrl</span>+<span class="kbd">Q</span>. To uncomment the lines repeat it once again.</p>
+
+<h3>Custom Labels</h3>
+<p>You can give labels custom names that are  not dependent on  decompiler options. The names are specified in the file CustomLabels.ini (separately for each game).</p>
+<p class="note">File syntax:<br>&lt;label offset&gt;=&lt;custom name&gt;</p>
+<p>If the decompiler finds a label at the specified offset, it will get the custom name.</p>
+<p>To find out the label offset set the labels format to "Global Offset" in the options. After decompiling, the number in a label name is its offset.</p>
+
+<h3>Checking for updates</h3>
+<p>Sanny Builder is able to check if a new version is available. To use this feature go to menu "Help->Check for update...". The editor will connect to the update servers and propose to download and install an update file if the latter exists. The editor can automatically check for an available update at startup if you enable this option in the updater window.</p>
+
+</body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML><HEAD><TITLE>Conditions</TITLE>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script language="javascript" type="text/javascript" src="img/en/clipboard.js"></script>
+</HEAD>
+<BODY topMargin=0 >
+<TABLE
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #c0c0c0 1px solid"
+height=121 cellSpacing=0 cellPadding=0 width=640>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="100%"><IMG
+      src="img/en/logo2.jpg" width="640" height="121" border=0 class="conthdr" ></TD>
+  </TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=640 border=0>
+  <TBODY>
+
+  <TD width="100%" height="100%" vAlign=top>
+   <DIV><IMG
+      src="img/en/old/coding/articles.png" width="640" height="33"></DIV>
+
+
+      <TABLE cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD width=5><IMG height=36
+            src="img/en/mtdl.png" width=5></TD>
+          <TD class=ntitle vAlign=top
+          background="mtdbg.png" height=36>Conditions</TD>
+          <TD width=5><IMG height=36
+            src="img/en/mtdr.png"
+      width=20></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD width=5 background="ltd.gif"></TD>
+          <TD class=news vAlign=top><p>
+
+There is the operator IF to evaluate the condition.
+
+	Two kinds of syntax of this statement are permitted: </p>
+<ol>
+	<li><a href="#low-level"> low-level</a>
+	<li> <a href="#high-level">high-level.</a>
+</ol><p>
+	<a name="low-level">1. The following syntax is used:</a></p>
+<DIV class=mycode5>	00d6: <span class="general1-reservedword">if</span> &lt;N&gt;<br>
+	... &lt;condition 1&gt;<br>
+	... &lt;condition 2&gt;<br>
+	...<br>
+	... &lt;condition n+1&gt;<br>
+	004d: jump_if_false &lt;label&gt;</div>
+<p>
+	<strong>&lt;N&gt;</strong> - the parameter means total number of conditions.<br>
+0 	 - 1 condition<br>
+1..7	 - 2 and more conditions (8 max) connected by logic operator <strong>AND</strong>.<br>
+	The check returns true if <span class="style12">ALL</span> conditions within this return true.<br>
+21..27 	 - 2 and more conditions (8 max), connected by logic operator <strong>OR</strong>. <br>
+	The check returns true, if even <span class="style12">ONE</span> condition within this return true.<br>
+</p>
+<p>
+
+      <strong>&lt;label&gt;</strong> - a name of a label where script jumps if the check is false.<br>
+      <br>
+      Sanny Builder allows not to use parameter for single conditions.&nbsp; (meaning, <strong>if</strong> is the same as <strong>if 0</strong>)<br>
+      <a name="IF_AND"></a><br>
+	Also you can use keywords <strong>AND</strong> or <strong>OR</strong> instead of the condition's number*.<br>
+	The compiler will calculate the necessary value itself.<br><br>
+
+	For example:</p>
+<br>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/en/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard();"  ></span>
+<TEXTAREA ID="holdtext" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext" class="NON"><span class="general1-reservedword">if and </span>
+<span class="general1-variable">$var</span> > <span class="general1-number">0</span>
+<span class="general1-variable">$var2</span> == <span class="general1-number">10.0</span>
+<span class="general1-reservedword">jf</span> <span class="general1-label">@anywhere</span></pre></div>
+<p><br>
+	The compiler will write number 1 instead of 'and'.<br><br>
+
+	* Option 'Conditions check' has to be enabled.<br>
+	<strong>IF AND</strong> - conditions connected with the logic operator AND (1..7)<br>
+	<strong>IF OR</strong> - conditions connected with the logic operator OR (21..27)</p>
+<br>
+<p>
+	<a name="high-level">2. </a>Sanny Builder supports high-level constructions<a name="THEN"></a><br>
+	<span class="general1-reservedword">IF</span>..<span class="general1-reservedword">THEN</span>..<span class="general1-reservedword">END</span><br>
+	<span class="general1-reservedword">IF</span>..<span class="general1-reservedword">THEN</span>..<span class="general1-reservedword">ELSE</span>..<span class="general1-reservedword">END</span>*<br><br>
+
+	A condition is created by the rules described above.<br>
+	After the word <span class="general1-reservedword">THEN</span>, you have to specify the command(-s) that are executed
+	if the condition is true.<br>
+	After the word <span class="general1-reservedword">ELSE</span>, you have to specify the command(-s) that are executed
+	if the condition is false. <br><br>
+
+	The <span class="general1-reservedword">IF</span> statement is closed by word <span class="general1-reservedword">End</span>.</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/en/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard1();"  ></span>
+<TEXTAREA ID="holdtext1" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext1" class="NON"><span class="general1-reservedword">if</span> <span class="general1-variable">$var</span> == <span class="general1-number">5</span><br>
+<span class="general1-reservedword">then</span>
+Inc(<span class="general1-variable">$var</span>)
+<span class="general1-reservedword">else</span>
+Dec(<span class="general1-variable">$var</span>)
+<span class="general1-reservedword">end</span></pre></div>
+<p>
+	* Option 'Conditions check' has to be enabled.<br>
+	** Nested <span class="general1-reservedword">IF</span> statements are supported.<br>
+	<br>
+
+
+	You can use the following relational operators*:</p>
+<DIV class=mycode5>	a == b&nbsp;&nbsp;&nbsp;a is equal to b <br>
+	a &gt;= b&nbsp;&nbsp;	 a is greater than or equal to b <br>
+	a  &gt; b&nbsp;&nbsp;&nbsp;	 a is greater than b <br>
+	a  &lt; b&nbsp;&nbsp;&nbsp;	 a is less than b <br>
+	a &lt;= b&nbsp;&nbsp;	 a is less than or equal to b <br>
+	a &lt;&gt; b&nbsp;&nbsp; a is inequal to b</div>
+<p>
+	*If there is no opcode in the line. Otherwise these sign will be
+	ignores like any other words.
+</p>
+        </TD>
+          <TD width=5
+        background="rtd.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD width=5><IMG height=20
+            src="img/en/mtdlbot.png" width=5 border=0></TD>
+          <TD align=left
+            background="mtdbgbot.png"></TD>
+          <TD class=ninfo align=right
+          background="mtdbgbot.png">&nbsp;
+            </TD>
+          <TD width=5><IMG height=20
+            src="img/en/mtdrbot.png" width=5
+        border=0></TD></TR></TBODY></TABLE></DIV>
+</TD></TR><td width="100%"></TBODY></TABLE>
+</TABLE></body></html>
