@@ -1,2 +1,4 @@
-.idea
 *.chm
+!.gitignore
+.idea/
+.vscode/

@@ -18,37 +18,32 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Directives">
 		<param name="Name" value="Directives">
-		<param name="Local" value="directives.htm">
+		<param name="Local" value="coding/directives.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Additional commands">
 		<param name="Name" value="Additional commands">
-		<param name="Local" value="additional.htm">
+		<param name="Local" value="coding/additional.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Keywords">
 		<param name="Name" value="Keywords">
-		<param name="Local" value="keywords.htm">
+		<param name="Local" value="coding/keywords.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Classes">
 		<param name="Name" value="Classes">
-		<param name="Local" value="classes.htm">
+		<param name="Local" value="coding/classes.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Arrays">
 		<param name="Name" value="Arrays">
-		<param name="Local" value="arrays.htm">
+		<param name="Local" value="coding/arrays.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Variables">
 		<param name="Name" value="Variables">
-		<param name="Local" value="variables.htm">
-		</OBJECT>
-	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="About the program">
-		<param name="Name" value="About the program">
-		<param name="Local" value="About.htm">
+		<param name="Local" value="coding/variables.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Opcode Search Tool">
@@ -58,22 +53,22 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Code syntax">
 		<param name="Name" value="Code syntax">
-		<param name="Local" value="data_types.htm">
+		<param name="Local" value="coding/data_types.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Loop statements">
 		<param name="Name" value="Loop statements">
-		<param name="Local" value="loops.htm">
+		<param name="Local" value="coding/loops.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Conditions">
 		<param name="Name" value="Conditions">
-		<param name="Local" value="conditions.htm">
+		<param name="Local" value="coding/conditions.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="HEX..END">
 		<param name="Name" value="HEX..END">
-		<param name="Local" value="hex_end.htm">
+		<param name="Local" value="coding/hex_end.html">
 		</OBJECT>
 </UL>
 </BODY></HTML>

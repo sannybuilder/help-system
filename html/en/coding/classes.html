@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Classes</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<script language="javascript" type="text/javascript" src="clipboard.js"></script>
+</head>
+<body>
+
+<h2>Classes</h2>
+
+<p><b>Basic Concepts</b></p>
+<p>Sanny Builder allows you to use classes in the  code.&nbsp; Class is a group of opcodes applied to in-game objects: player,  actor, object, etc.</p>
+<p>   Each class has a set of commands (class members). They can be split
+	into the following groups:</p>
+<ul>
+	<li> conditional opcodes
+	<li>regular opcodes (methods)
+	<li>properties
+</ul>
+<hr>
+<b>
+		Conditional Commands</b>
+
+<p>
+Conditional commands are marked with the word 'Check' in the resizable
+	window that is displayed when you press Ctrl+Space. Many of these have only the parameter:  the class owner handle (name).<br><br>
+
+	Example:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard();"  ></span>
+<TEXTAREA ID="holdtext" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext" class="NON"><span class="general1-reservedword">if</span>
+<span class="general1-class">Player</span>.<span class="general1-command">Defined</span>(<span class="general1-variable">$PLAYER_CHAR</span>)
+<span class="general1-reservedword">jf</span> <span class="general1-label">@anywhere</span></pre></div>
+<p><br>
+  <span class="general1-class">Player</span> - class name<br>
+	<span class="general1-command">Defined</span> - class member<br>
+	<span class="general1-variable">$PLAYER_CHAR</span> - class owner</p>
+<hr>
+
+		<b>	Regular Commands (methods)</b>
+        <p>Regular (procedural) commands are used to complete  a single in-game action: move an object, destroy this one and so on.&nbsp; A special kind of these commands is the  constructor that creates an object (an actor, a car) and stores its handle to a  variable.<br><br>
+	In SB the constructor can be used either as method or property:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard1();"  ></span>
+<TEXTAREA ID="holdtext1" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext1" class="NON"><span class="general1-class">Player</span>.<span class="general1-command">Create</span>(<span class="general1-variable">$PLAYER_CHAR</span>, <span class="general1-model">#NULL</span>, <span class="general1-number">2488.5601</span>, <span class="general1-number">-1666.84</span>, <span class="general1-number">13.38</span>) - procedure
+<span class="general1-variable">$PLAYER_CHAR</span> = <span class="general1-class">Player</span>.<span class="general1-command">Create</span>(<span class="general1-model">#NULL</span>, <span class="general1-number">2488.5601</span>, <span class="general1-number">-1666.84</span>, <span class="general1-number">13.38</span>) - constructor</pre></div>
+<p>These create the same effect.
+</p>
+
+<hr>
+
+		<b>Properties</b>
+<p>Property allows you to read/write values to the class fields.<br><br>
+
+	Example: <br>
+	Property 'Money' of the class 'Player' allows to operate with the
+	following opcodes:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard2();"  ></span>
+<TEXTAREA ID="holdtext2" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext2" class="NON">0109: player <span class="general1-variable">$PLAYER_CHAR</span> money += <span class="general1-number">1000000</span>
+010A:   player <span class="general1-variable">$PLAYER_CHAR</span> money > <span class="general1-variable">461@</span>
+010B: <span class="general1-variable">4@</span> = player <span class="general1-variable">$PLAYER_CHAR</span> money</pre></div>
+<p>
+   With the property you can use the following commands without any opcodes:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard3();"  ></span>
+<TEXTAREA ID="holdtext3" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext3" class="NON">player(<span class="general1-variable">$PLAYER_CHAR</span>).<span class="general1-command">Money</span> += <span class="general1-number">1000000</span>
+player(<span class="general1-variable">$PLAYER_CHAR</span>).<span class="general1-command">Money</span> &gt; <span class="general1-variable">461@</span>
+<span class="general1-variable">4@</span> = player(<span class="general1-variable">$PLAYER_CHAR</span>).<span class="general1-command">Money</span></pre>
+</div>
+<p>Note: that you make DIFFERENT actions using the ONLY command.
+</p>
+<a name="propertystringlimit"></a><p>In the current version there is a limit on using space characters in the string literals used as a parameter in a property. The compiler ignores these characters. For example, the command</p>
+<DIV class=mycode5><span class="general1-variable">0@</span> =  <span class="general1-class">File</span>.<span class="general1-command">Open</span>(<span class="general1-string">"file name"</span>,<span class="general1-string">"wb"</span>)</div>
+<p>will be compiled as</p>
+<DIV class=mycode5><span class="general1-variable">0@</span> =  <span class="general1-class">File</span>.<span class="general1-command">Open</span>(<span class="general1-string">"filename"</span>,<span class="general1-string">"wb"</span>)</div>
+<hr>
+
+		<b>Class Members</b>
+        <p>There is a possibility of initializing the variables  as class members to use them instead of class names.<br>
+          <br>
+Example:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard4();"  ></span>
+<TEXTAREA ID="holdtext4" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext4" class="NON"><span class="general1-reservedword">var</span>
+<span class="general1-variable">$PLAYER_CHAR</span>: Player
+<span class="general1-reservedword">end</span></pre></div>
+<p>
+It declares the variable $PLAYER_CHAR as member of the class 'Player'. <br>
+	So, the variable can be used instead of the class name Player:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard5();"  ></span>
+<TEXTAREA ID="holdtext5" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext5" class="NON"><span class="general1-reservedword">if</span>
+<span class="general1-variable">$PLAYER_CHAR</span>.<span class="general1-command">Defined</span>
+<span class="general1-reservedword">jf</span> <span class="general1-label">@anywhere</span></pre></div>
+<p>Pay attention that such variables are compiled as the first parameter and therefore, do not duplicate them.</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard6();"  ></span>
+<TEXTAREA ID="holdtext6" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext6" class="NON"><span class="general1-class">Player</span>.<span class="general1-command">SetClothes</span>(<span class="general1-variable">$PLAYER_CHAR</span>, <span class="general1-string">"PLAYER_FACE"</span>, <span class="general1-string">"HEAD"</span>, Head)
+=
+<span class="general1-variable">$PLAYER_CHAR</span>.<span class="general1-command">SetClothes</span>(<span class="general1-string">"PLAYER_FACE"</span>, <span class="general1-string">"HEAD"</span>, Head))</pre></div>
+<p>
+   These variables can be redeclared with another type.
+
+</p>
+<hr>
+
+		<b>'Model' Class</b>
+        <p>
+The model identifiers are always the members of the 'Model' class. <br>
+You can reference this class using their names:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard7();"  ></span>
+<TEXTAREA ID="holdtext7" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext7" class="NON"><span class="general1-model">#AK47</span>.<span class="general1-command">Load</span>
+
+<span class="general1-label">:loop</span>
+<span class="general1-reservedword">wait</span> <span class="general1-number">0</span>
+<span class="general1-reservedword">if</span>
+<span class="general1-model">#AK47</span>.<span class="general1-command">Available</span>
+<span class="general1-reservedword">jf</span> <span class="general1-label">@loop</span></pre></div>
+<p>	It is the same as:</p>
+
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard8();"  ></span>
+<TEXTAREA ID="holdtext8" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext8" class="NON"><span class="general1-class">Model</span>.<span class="general1-command">Load</span>(<span class="general1-model">#AK47</span>)
+
+<span class="general1-label">:loop</span>
+<span class="general1-reservedword">wait</span> <span class="general1-number">0</span>
+<span class="general1-reservedword">if</span><br>
+<span class="general1-class">Model</span>.<span class="general1-command">Available</span>(<span class="general1-model">#AK47</span>)
+<span class="general1-reservedword">jf</span> <span class="general1-label">@loop</span></pre></div>
+
+<br><hr>
+
+		<b>Extended Parameters (class constants)</b>
+        <p>Some classes use parameters with special  names.&nbsp; This possibility makes the source  code more readable.<br><br>
+
+	Example:</p>
+<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard9();"  ></span>
+<TEXTAREA ID="holdtext9" STYLE="display:none;"></TEXTAREA></div>
+<div class=mycode5>
+<pre id="copytext9" class="NON"><span class="general1-class">Player</span>.<span class="general1-command">SetClothes</span>(<span class="general1-variable">$PLAYER_CHAR</span>, <span class="general1-string">"VEST"</span>, <span class="general1-string">"VEST"</span>, Torso)</pre></div>
+<p>Last parameter (Torso) is the class constant that will be&nbsp; replaced with  the number 0 at compilation.<br><br>
+  These parameters are defined in the file 'classes.db'.<br>
+  <br>
+
+For convenience, a list of extended parameters are displayed when you press  Ctrl+Space.&nbsp; Simply place the cursor where there  should be an extended parameter,&nbsp;  press ctrl+space and the parameters list will be displayed. <br>
+You can then select a name from it and insert this into your code. </p>
+</body></html>

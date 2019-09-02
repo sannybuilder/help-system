@@ -11,13 +11,13 @@
 <UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="About Sanny Builder">
-		<param name="Local" value="html/en/About.htm">
+		<param name="Local" value="html/en/about/about.html">
 		<param name="ImageNumber" value="1">
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Version History ">
-			<param name="Local" value="html/en/About2.htm">
+			<param name="Local" value="html/en/about/version_history.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
@@ -28,47 +28,47 @@
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Data Types">
-			<param name="Local" value="html/en/data_types.htm">
+			<param name="Local" value="html/en/coding/data_types.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Variables">
-			<param name="Local" value="html/en/variables.htm">
+			<param name="Local" value="html/en/coding/variables.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Constants">
-			<param name="Local" value="html/en/constants.htm">
+			<param name="Local" value="html/en/coding/constants.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Arrays">
-			<param name="Local" value="html/en/arrays.htm">
+			<param name="Local" value="html/en/coding/arrays.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Conditions">
-			<param name="Local" value="html/en/conditions.htm">
+			<param name="Local" value="html/en/coding/conditions.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Loops">
-			<param name="Local" value="html/en/loops.htm">
+			<param name="Local" value="html/en/coding/loops.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Classes">
-			<param name="Local" value="html/en/classes.htm">
+			<param name="Local" value="html/en/coding/classes.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Keywords">
-			<param name="Local" value="html/en/keywords.htm">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Additional Commands">
-			<param name="Local" value="html/en/additional.htm">
+			<param name="Local" value="html/en/coding/keywords.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="HEX..END">
-			<param name="Local" value="html/en/hex_end.htm">
+			<param name="Local" value="html/en/coding/hex_end.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Directives">
-			<param name="Local" value="html/en/directives.htm">
+			<param name="Local" value="html/en/coding/directives.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Built-in Commands">
+			<param name="Local" value="html/en/coding/additional.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
@@ -79,29 +79,29 @@
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Options">
-			<param name="Local" value="html/en/O_100.htm">
+			<param name="Local" value="html/en/editor/O_100.htm">
 			<param name="ImageNumber" value="2">
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="General">
-				<param name="Local" value="html/en/O_101.htm">
+				<param name="Local" value="html/en/editor/O_101.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Formats">
-				<param name="Local" value="html/en/O_102.htm">
+				<param name="Local" value="html/en/editor/O_102.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Editor">
-				<param name="Local" value="html/en/O_103.htm">
+				<param name="Local" value="html/en/editor/O_103.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Highlighter">
-				<param name="Local" value="html/en/O_104.htm">
+				<param name="Local" value="html/en/editor/O_104.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Hotkeys">
-				<param name="Local" value="html/en/O_105.htm">
+				<param name="Local" value="html/en/editor/O_105.htm">
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">

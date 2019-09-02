@@ -6,23 +6,40 @@ Compiled file=help.chm
 Contents file=Table of Contents.hhc
 Default Font=Verdana,8,0
 Default Window=main
-Default topic=html/en/About.htm
+Default topic=html/en/about/about.html
 Display compile progress=No
 Full text search stop list file=exclude.stp
 Full-text search=Yes
 Index file=Index.hhk
-Language=0x809 Английский (Великобритания)
+Language=0x809
 Title=Sanny Builder Help
 
 [WINDOWS]
-main=,"Table of Contents.hhc","Index.hhk","html/en/About.htm",,,,,,0x42520,300,0x3046,[193,60,993,660],,,,,,,0
+main=,"Table of Contents.hhc","Index.hhk","html/en/about/about.html",,,,,,0x42520,300,0x3046,[193,60,993,660],,,,,,,0
 
 
 [FILES]
-html/en/About2.htm
-html/en/About.htm
+html/en/about/about.html
+html/en/about/version_history.html
 html/en/coding.htm
+html/en/coding/additional.html
+html/en/coding/arrays.html
+html/en/coding/classes.html
+html/en/coding/conditions.html
+html/en/coding/constants.html
+html/en/coding/data_types.html
+html/en/coding/directives.html
+html/en/coding/hex_end.html
+html/en/coding/keywords.html
+html/en/coding/loops.html
+html/en/coding/variables.html
 html/en/editor.htm
+html/en/editor/O_100.htm
+html/en/editor/O_101.htm
+html/en/editor/O_102.htm
+html/en/editor/O_103.htm
+html/en/editor/O_104.htm
+html/en/editor/O_105.htm
 html/en/SCMHELPGTAVC.htm
 html/en/SCMHELP01.htm
 html/en/SCMHELP02.htm
@@ -68,26 +85,10 @@ html/en/GTAVCS1.htm
 html/en/GTAVCS2.htm
 html/en/GTAVCS3.htm
 html/en/SCMHELP05.htm
-html/en/variables.htm
-html/en/additional.htm
-html/en/arrays.htm
-html/en/classes.htm
-html/en/conditions.htm
 html/en/console.htm
-html/en/constants.htm
-html/en/data_types.htm
-html/en/directives.htm
 html/en/features.htm
 html/en/GTA_INI.htm
-html/en/hex_end.htm
 html/en/hotkeys.htm
-html/en/keywords.htm
-html/en/loops.htm
-html/en/O_100.htm
-html/en/O_101.htm
-html/en/O_102.htm
-html/en/O_103.htm
-html/en/O_104.htm
 html/en/opcode_search.htm
 html/en/ERR_0001.htm
 html/en/ERR_0002.htm
@@ -173,19 +174,28 @@ html/en/Cleo_OP.htm
 html/en/Cleo_SCRIPT.htm
 html/en/ERR_0083.htm
 html/en/ERR_0084.htm
-html/en/O_105.htm
 html/en/edit_modes.htm
 
 [ALIAS]
-IDH_additional=html/en/additional.htm
-IDH_arrays=html/en/arrays.htm
-IDH_classes=html/en/classes.htm
+IDH_additional=html/en/coding/additional.html
+IDH_arrays=html/en/coding/arrays.html
+IDH_classes=html/en/coding/classes.html
+IDH_conditions=html/en/coding/conditions.html
+IDH_constants=html/en/coding/constants.html
+IDH_data_types=html/en/coding/data_types.html
+IDH_directives=html/en/coding/directives.html
+IDH_hex_end=html/en/coding/hex_end.html
+IDH_keywords=html/en/coding/keywords.html
+IDH_loops=html/en/coding/loops.html
+IDH_variables=html/en/coding/variables.html
+IDH_O_100=html/en/editor/O_100.htm
+IDH_O_101=html/en/editor/O_101.htm
+IDH_O_102=html/en/editor/O_102.htm
+IDH_O_103=html/en/editor/O_103.htm
+IDH_O_104=html/en/editor/O_104.htm
+IDH_O_105=html/en/editor/O_105.htm
 IDH_CLEO_5=html/en/CLEO_5.htm
-IDH_conditions=html/en/conditions.htm
 IDH_console=html/en/console.htm
-IDH_constants=html/en/constants.htm
-IDH_data_types=html/en/data_types.htm
-IDH_directives=html/en/directives.htm
 IDH_ERR_0001=html/en/ERR_0001.htm
 IDH_ERR_0002=html/en/ERR_0002.htm
 IDH_ERR_0003=html/en/ERR_0003.htm
@@ -268,18 +278,8 @@ IDH_ERR_0083=html/en/ERR_0083.htm
 IDH_ERR_0084=html/en/ERR_0084.htm
 IDH_features=html/en/features.htm
 IDH_GTA_INI=html/en/GTA_INI.htm
-IDH_hex_end=html/en/hex_end.htm
 IDH_hotkeys=html/en/hotkeys.htm
-IDH_keywords=html/en/keywords.htm
-IDH_loops=html/en/loops.htm
-IDH_O_100=html/en/O_100.htm
-IDH_O_101=html/en/O_101.htm
-IDH_O_102=html/en/O_102.htm
-IDH_O_103=html/en/O_103.htm
-IDH_O_104=html/en/O_104.htm
-IDH_O_105=html/en/O_105.htm
 IDH_opcode_search=html/en/opcode_search.htm
-IDH_variables=html/en/variables.htm
 
 [MAP]
 #define IDH_additional 118
