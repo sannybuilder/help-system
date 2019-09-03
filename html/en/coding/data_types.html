@@ -1,73 +1,94 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Data types</title>
-	<link rel="stylesheet" type="text/css" href="style/style2.css">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<script language="javascript" type="text/javascript" src="clipboard.js"></script>
-</head>
-<body>
+  <head>
+    <title>Data types</title>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/javascript" src="clipboard.js"></script>
+  </head>
+  <body>
+    <h2>Data types</h2>
 
-<h2>Data types</h2>
+    <p>$ - global variables.</p>
+    <pre>0004: <span class="variable">$MyVar</span> = <span class="number">100</span></pre>
 
-<p>$ - global variables.</p>
-<pre>0004: <span class="variable">$MyVar</span> = <span class="number">100</span></pre>
+    <p>
+      @ before an identifier: a label. The identifier is used to reference the
+      address in the script
+    </p>
 
-<p>@ before an identifier: a label. The identifier is used to reference the address in the script</p>
+    <pre>0002: <span class="general1-reservedword">jump</span> <span class="general1-label">@MyLabel</span></pre>
 
-<pre>0002: <span class="general1-reservedword">jump</span> <span class="general1-label">@MyLabel</span></pre>
+    <p>@ after a number: a local variable.</p>
+    <pre>0006: <span class="general1-variable">100@</span> = <span class="general1-number">10</span></pre>
 
-<p>@ after a number: a local variable.</p>
-<pre>0006: <span class="general1-variable">100@</span> = <span class="general1-number">10</span></pre>
+    <a name="string"></a>
+    <p>
+      <span class="stro">'...'</span> - a fixed-length string containing up to 7
+      characters (or 15 in San Andreas).
+    </p>
+    <pre>03A4: name_thread<span class="general1-string"> 'MAIN'</span></pre>
 
-<a name="string"></a>
-<p><span class="stro">'...'</span> - a fixed-length string containing up to 7 characters (or 15 in San Andreas).</p>
-<pre>03A4: name_thread<span class="general1-string"> 'MAIN'</span></pre>
+    <p>An empty string is also allowed: <span class="stro">''</span></p>
 
-<p>An empty string is also allowed: <span class="stro">''</span></p>
+    <p>
+      The single quote character needs to be escaped with the backward slash.
+    </p>
+    <pre>03A4: name_thread <span class="general1-string">'scr\'ipt'</span></pre>
 
-<p>The single quote character needs to be escaped with the backward slash.</p>
-<pre>03A4: name_thread <span class="general1-string">'scr\'ipt'</span></pre>
+    <p>
+      <span class="general1-string">"..."</span> - a variable-long string (the
+      maximum length is determined by the opcode)
+    </p>
 
-<p><span class="general1-string">"..."</span> - a variable-long string (the maximum length is determined by the opcode)</p>
+    <p>An empty string is allowed: <span class="general1-string">""</span></p>
 
-<p>An empty string is allowed: <span class="general1-string">""</span></p>
+    <p>
+      The double quote character needs to be escaped with the backward slash.
+    </p>
+    <pre>0662: write_debug_message <span class="general1-string">"Hello, \"world\"! \n 'Here we go!'"</span></pre>
 
-<p>The double quote character needs to be escaped with the backward slash.</p>
-<pre>0662: write_debug_message <span class="general1-string">"Hello, \"world\"! \n 'Here we go!'"</span></pre>
+    <p><span class="general1-variable">s$</span> - a global string variable</p>
+    <pre>05A9: <span class="general1-variable">s$MyString</span> = <span class="general1-string">'GLOBAL'</span ></pre>
 
-<p>
-<span class="general1-variable">s$</span> - a global string variable	</p>
-<pre>05A9: <span class="general1-variable">s$MyString</span> = <span class="general1-string">'GLOBAL'</span ></pre>
+    <p><span class="general1-variable">@s</span> - a local string variable</p>
+    <pre>05AA: <span class="general1-variable">1@s</span> = <span class="stro">'LOCAL'</span></pre>
 
-<p><span class="general1-variable">@s</span> - a local string variable </p>
-<pre>05AA: <span class="general1-variable">1@s</span> = <span class="stro">'LOCAL'</span></pre>
+    <p>
+      <span class="general1-variable">v$</span> - a global long string variable
+    </p>
 
-<p><span class="general1-variable">v$</span> - a global long string variable</p>
+    <pre>06D1: <span class="general1-variable">v$MyString</span> =<span class="general1-string"> "LONG_GLOBAL"</span></pre>
 
-<pre>06D1: <span class="general1-variable">v$MyString</span> =<span class="general1-string"> "LONG_GLOBAL"</span></pre>
+    <p>
+      <span class="general1-variable">@v</span> - a local long string variable
+    </p>
 
-<p><span class="general1-variable">@v</span> - a local long string variable</p>
+    <pre>06D2: <span class="general1-variable">1@v</span> = <span class="general1-string">"LONG_LOCAL"</span></pre>
 
-<pre>06D2: <span class="general1-variable">1@v</span> = <span class="general1-string">"LONG_LOCAL"</span></pre>
+    <p>
+      <span class="general1-model">#</span> - a model identifier from '.ide'
+      files
+    </p>
 
-<p><span class="general1-model">#</span> - a model identifier from '.ide' files </p>
+    <pre>0247: request_model <span class="general1-model">#CELLPHONE</span></pre>
 
-<pre>0247: request_model <span class="general1-model">#CELLPHONE</span></pre>
+    <p>
+      & - ADMA (Advanced Direct Memory Access).<br />
+      Reads/writes the values within the SCM even not in the variables block.<br />
+      Does not affect the second segment size.
+    </p>
+    <p>ADMA can be used the same as a global variable.</p>
 
-<p>
-	& - ADMA (Advanced Direct Memory Access).<br>
-	Reads/writes the values within the SCM even not in the variables block.<br>
-	Does not affect the second segment size. </p>
-<p>ADMA can be used the same as a global  variable. </p>
+    <pre><span class="general1-variable">&57</span> += <span class="general1-variable">&120</span>(<span class="general1-variable">&231</span>,<span class="general1-number">4i</span>)</pre>
 
-<pre><span class="general1-variable">&57</span> += <span class="general1-variable">&120</span>(<span class="general1-variable">&231</span>,<span class="general1-number">4i</span>)</pre>
+    <p>
+      <span class="general1-number">0x</span> - a hexadimal number<br />
+      <span class="general1-number">-0x</span> - a negative hexadimal number
+    </p>
 
-<p><span class="general1-number">0x</span> - a hexadimal number<br>
-<span class="general1-number">-0x</span> - a negative hexadimal number</p>
+    <pre>0004: <span class="general1-variable">$var</span> = <span class="general1-number">-0xBB08</span></pre>
 
-<pre>0004: <span class="general1-variable">$var</span> = <span class="general1-number">-0xBB08</span></pre>
-
-<p>The number has to be within the -0x80000000..0x7FFFFFFF range.</p>
-
-</body></html>
+    <p>The number has to be within the -0x80000000..0x7FFFFFFF range.</p>
+  </body>
+</html>

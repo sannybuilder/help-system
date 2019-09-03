@@ -1,33 +1,61 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Constants</title>
-	<link rel="stylesheet" type="text/css" href="style2.css">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<script language="javascript" type="text/javascript" src="clipboard.js"></script>
-</head>
-<body>
+  <head>
+    <title>Constants</title>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/javascript" src="clipboard.js"></script>
+  </head>
+  <body>
+    <h2>Constants</h2>
 
-<h2>Constants</h2>
+    <p>
+      A constant is an identifier with a predefined value. As opposed to a
+      variable the value of the constant can't be changed in run-time. At
+      compile-time the name of the constant is replaced in the code with its
+      value. The constants can be numeric (<em>numerals</em>) and string (<em
+        >string literals</em
+      >), and contain an expression.
+    </p>
 
-<p>A constant is an identifier with a predefined value. As opposed to a variable the value of the constant can't be changed in run-time. At compile-time the name of the constant is replaced in the code with its value. The constants can be numeric (<em>numerals</em>) and string (<em>string literals</em>), and contain an expression.</p>
+    <p>
+      To define a new constant use the construct <strong>CONST..END</strong>. It
+      syntax looks like this:
+    </p>
 
-<p>To define a new constant use the construct <strong>CONST..END</strong>. It syntax looks like this:</p>
-
-<pre><span class="general1-reservedword">CONST</span>
+    <pre><span class="general1-reservedword">CONST</span>
     &lt;constant name&gt; = &lt;constant value&gt;
 <span class="general1-reservedword">END</span></pre>
 
-<p>The  constant name is any allowed identifier (letters, numbers and the underscore character). There are  reserved names that can't be used, as <b>continue</b>, <b>true</b>, <b>and</b> and so on.</p>
+    <p>
+      The constant name is any allowed identifier (letters, numbers and the
+      underscore character). There are reserved names that can't be used, as
+      <b>continue</b>, <b>true</b>, <b>and</b> and so on.
+    </p>
 
-<p>The constant value may be a number (a model identifier, a label); a string; an expression (e.g. a class or a variable); another constant.</p>
+    <p>
+      The constant value may be a number (a model identifier, a label); a
+      string; an expression (e.g. a class or a variable); another constant.
+    </p>
 
-<p>Example:</p>
+    <p>Example:</p>
 
-<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard();"  ></span>
-<TEXTAREA ID="holdtext" STYLE="display:none;"></TEXTAREA></div>
+    <div class="imgcursor" align="right">
+      <span class="kbd"
+        ><img
+          src="img/ico_cb.gif"
+          alt="Copy to Clipboard"
+          width="16"
+          height="16"
+          onClick="ClipBoard();"
+      /></span>
+      <TEXTAREA ID="holdtext" STYLE="display:none;"></TEXTAREA>
+    </div>
 
-<pre id="copytext" class="NON"><span class="general1-reservedword">const</span>
+    <pre
+      id="copytext"
+      class="NON"
+    ><span class="general1-reservedword">const</span>
     MoneyRequired = <span class="general1-number">30</span>
     PlayerMoney = <span class="general1-variable">$PLAYER_CHAR</span>.<span class="general1-command">Money</span>
 <span class="general1-reservedword">end</span>
@@ -38,23 +66,51 @@
     PlayerMoney += <span class="general1-number">-1</span>
 <span class="general1-reservedword">end</span></pre>
 
-<p>At  compilation the constant MoneyRequired will be replaced with a number 30 and  PlayerMoney with <span class="general1-variable">$PLAYER_CHAR</span>.<span class="general1-command">Money</span>.</p>
-<p>The  compiler also uses 2 internal constants True and False which values are equals  to 1 and 0 accordingly.</p>
-<p>You can use  the constant elsewhere except the case:</p>
+    <p>
+      At compilation the constant MoneyRequired will be replaced with a number
+      30 and PlayerMoney with
+      <span class="general1-variable">$PLAYER_CHAR</span>.<span
+        class="general1-command"
+        >Money</span
+      >.
+    </p>
+    <p>
+      The compiler also uses 2 internal constants True and False which values
+      are equals to 1 and 0 accordingly.
+    </p>
+    <p>You can use the constant elsewhere except the case:</p>
 
-<div  class="imgcursor" align="right"><span class="kbd"><img src="img/ico_cb.gif" alt="Copy to Clipboard" width="16" height="16"  onClick="ClipBoard1();"  ></span>
-<TEXTAREA ID="holdtext1" STYLE="display:none;"></TEXTAREA></div>
+    <div class="imgcursor" align="right">
+      <span class="kbd"
+        ><img
+          src="img/ico_cb.gif"
+          alt="Copy to Clipboard"
+          width="16"
+          height="16"
+          onClick="ClipBoard1();"
+      /></span>
+      <TEXTAREA ID="holdtext1" STYLE="display:none;"></TEXTAREA>
+    </div>
 
-<pre id="copytext1" class="NON"><span class="general1-reservedword">const</span>
+    <pre
+      id="copytext1"
+      class="NON"
+    ><span class="general1-reservedword">const</span>
     VarName = <span class="general1-variable">$Var</span>
     IndexName = <span class="general1-number">25</span>
 <span class="general1-reservedword">end</span>
 
 VarName[IndexName] = <span class="general1-number">0</span></pre>
 
-<p>To compile such expression, you must write the opcode, for example:</p>
+    <p>To compile such expression, you must write the opcode, for example:</p>
 
-<pre>0004: VarName[IndexName] = <span class="general1-number">0</span></pre>
-<p>Also there  are the limits with using of a complex expression as a constant.</p>
+    <pre>0004: VarName[IndexName] = <span class="general1-number">0</span></pre>
+    <p>
+      Also there are the limits with using of a complex expression as a
+      constant.
+    </p>
 
-The list of the constants could be called at any place  of the code by pressing Ctrl + [space].</body></html>
+    The list of the constants could be called at any place of the code by
+    pressing Ctrl + [space].
+  </body>
+</html>
